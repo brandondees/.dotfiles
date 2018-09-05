@@ -1,6 +1,9 @@
 bundler
 pry
+byebug
+pry-byebug
 rubocop
 reek
 brakeman
 tmuxinator
+nokogiri
