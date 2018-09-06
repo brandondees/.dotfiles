@@ -103,3 +103,5 @@ if [ -f /usr/share/autojump/autojump.sh ]; then
   . /usr/share/autojump/autojump.sh
 fi
 
+# Tmuxinator autocompletion
+. ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
