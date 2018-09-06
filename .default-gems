@@ -1,9 +1,15 @@
 bundler
 pry
+pry-remote
 byebug
 pry-byebug
 rubocop
 reek
 brakeman
+bundler-audit
 tmuxinator
 nokogiri
+i18n
+rack
+progress_bar
+
