@@ -96,3 +96,10 @@ stty -ixon
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# For Debian environments, activate autojump
+# https://github.com/wting/autojump
+if [ -f /usr/share/autojump/autojump.sh ]; then
+  . /usr/share/autojump/autojump.sh
+fi
+
