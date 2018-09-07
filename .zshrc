@@ -94,6 +94,8 @@ fi
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
+# TheFuck
+# https://github.com/nvbn/thefuck
 eval $(thefuck --alias qwer)
 
 # for vim control+s
@@ -103,7 +105,10 @@ stty -ixon
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+# FZF
+# https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Tmuxinator autocompletion
-. ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
+# and mux alias
+source ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
