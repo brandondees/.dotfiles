@@ -93,7 +93,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'nikvdp/ejs-syntax'
 
 " Wakatime, a time spent coding tracker
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
