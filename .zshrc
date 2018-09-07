@@ -54,7 +54,9 @@ ZSH_THEME="robbyrussell"
 plugins=(
   asdf
   autojump
-  git
+  bundler
+  common-aliases
+  gitfast
   ruby
   rails
   bundler
