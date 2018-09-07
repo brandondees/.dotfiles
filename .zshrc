@@ -51,11 +51,21 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails bundler tmux tmuxinator)
+plugins=(
+  asdf
+  autojump
+  git
+  ruby
+  rails
+  bundler
+  tmux
+  tmuxinator
+)
 
 # additional git aliases
 alias gfc='git fetch upstream && git checkout upstream/master'
 alias gfr='git fetch upstream && git rebase -i upstream/master'
+
 # autostart tmux
 export ZSH_TMUX_AUTOSTART=true
 
@@ -96,12 +106,6 @@ stty -ixon
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# For Debian environments, activate autojump
-# https://github.com/wting/autojump
-if [ -f /usr/share/autojump/autojump.sh ]; then
-  . /usr/share/autojump/autojump.sh
-fi
 
 # Tmuxinator autocompletion
 . ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
