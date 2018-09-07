@@ -92,7 +92,7 @@ fi
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+# [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # TheFuck
 # https://github.com/nvbn/thefuck
