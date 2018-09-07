@@ -57,6 +57,7 @@ plugins=(
   bundler
   common-aliases
   gitfast
+  rake
   ruby
   rails
   bundler
