@@ -1,9 +1,9 @@
 [user]
-	name = Alex Piechowski
-	email = alex@piechowski.io
+	name = Brandon Dees
+	email = brandon@rietta.com
 [core]
 	editor = vim
-	excludesfile = /home/alex/.gitignore_global
+	excludesfile = /home/dees/.gitignore_global
 [push]
 	default = simple
 [filter "lfs"]
