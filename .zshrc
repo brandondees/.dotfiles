@@ -60,19 +60,14 @@ plugins=(
   rake
   ruby
   rails
-  bundler
   tmux
   tmuxinator
 )
 
-# additional git aliases
-alias gfc='git fetch upstream && git checkout upstream/master'
-alias gfr='git fetch upstream && git rebase -i upstream/master'
+source ~/.bash_aliases
 
 # autostart tmux
 export ZSH_TMUX_AUTOSTART=true
-
-alias mux=tmuxinator
 
 source $ZSH/oh-my-zsh.sh
 
