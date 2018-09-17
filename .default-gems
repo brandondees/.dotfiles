@@ -1,10 +1,14 @@
+gem-ctags
+neovim
 bundler
 pry
 pry-remote
 byebug
 pry-byebug
 rubocop
+rubocop-rspec
 reek
+rubycritic
 brakeman
 bundler-audit
 tmuxinator
