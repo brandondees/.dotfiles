@@ -3,8 +3,6 @@
 export DEBIAN_FRONTEND=noninteractive
 set -e
 
-$HOME/.dotfiles/install-scripts/link-dotfiles.rb
-
 sudo apt update
 # get all the basic dependencies and utilities
 sudo -E apt install -y \
@@ -38,7 +36,13 @@ if [ ! -d ~/.dotfiles ]; then
   git clone git@github.com:brandondees/.dotfiles.git ~/.dotfiles || git clone https://github.com/brandondees/.dotfiles ~/.dotfiles
 fi
 
+# Install tool version manager and ruby
 $HOME/.dotfiles/install-scripts/asdf/install.sh
+
+# Using ruby, hook up the dotfiles
+$HOME/.dotfiles/install-scripts/link-dotfiles.rb
+
+# Install other key tools with custom scripts
 $HOME/.dotfiles/install-scripts/autojump/install.sh
 $HOME/.dotfiles/install-scripts/google-chrome/install.sh
 $HOME/.dotfiles/install-scripts/maria-db/install.sh
