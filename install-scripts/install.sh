@@ -3,6 +3,8 @@
 export DEBIAN_FRONTEND=noninteractive
 set -e
 
+$HOME/.dotfiles/install-scripts/link-dotfiles.rb
+
 sudo apt update
 sudo -E apt install -y i3 wget curl git tmux shutter rxvt-unicode feh \
 	silversearcher-ag build-essential tcl libqt4-dev libqtwebkit-dev \
@@ -26,4 +28,3 @@ $HOME/.dotfiles/install-scripts/autojump/install.sh
 
 # load in asdf for Ruby that was only JUST installed above
 . $HOME/.asdf/asdf.sh
-$HOME/.dotfiles/install-scripts/link-dotfiles.rb
