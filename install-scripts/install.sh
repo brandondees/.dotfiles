@@ -51,5 +51,3 @@ $HOME/.dotfiles/install-scripts/tmuxinator/install.sh
 $HOME/.dotfiles/install-scripts/vim/install.sh
 $HOME/.dotfiles/install-scripts/zsh/install.sh
 
-# load in asdf for Ruby that was only JUST installed above
-. $HOME/.asdf/asdf.sh
