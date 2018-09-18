@@ -2,6 +2,7 @@ gem-ctags
 neovim
 bundler
 pry
+pry-doc
 pry-remote
 byebug
 pry-byebug
