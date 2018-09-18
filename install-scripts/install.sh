@@ -6,10 +6,33 @@ set -e
 $HOME/.dotfiles/install-scripts/link-dotfiles.rb
 
 sudo apt update
-sudo -E apt install -y i3 wget curl git tmux shutter rxvt-unicode feh \
-	silversearcher-ag build-essential tcl libqt4-dev libqtwebkit-dev \
-        scrot redshift xautolock xclip libssl-dev zlib1g-dev xclip \
-        acpi scrot nmap libreadline-dev tzdata
+# get all the basic dependencies and utilities
+sudo -E apt install -y \
+  i3 \
+  wget \
+  curl \
+  git \
+  tmux \
+  shutter \
+  rxvt-unicode \
+  feh \
+  silversearcher-ag \
+  build-essential \
+  tcl \
+  libqt4-dev \
+  libqtwebkit-dev \
+  scrot \
+  redshift \
+  xautolock \
+  xclip \
+  libssl-dev \
+  zlib1g-dev \
+  xclip \
+  acpi \
+  scrot \
+  nmap \
+  libreadline-dev \
+  tzdata
 
 if [ ! -d ~/.dotfiles ]; then
   git clone git@github.com:brandondees/.dotfiles.git ~/.dotfiles || git clone https://github.com/brandondees/.dotfiles ~/.dotfiles
