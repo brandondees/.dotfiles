@@ -37,7 +37,7 @@ if [ ! -d ~/.dotfiles ]; then
 fi
 
 # Install tool version manager and ruby
-$HOME/.dotfiles/install-scripts/asdf/install.sh
+$HOME/.dotfiles/install-scripts/asdf/install.sh && source $HOME/.asdf/asdf.sh
 
 # Using ruby, hook up the dotfiles
 $HOME/.dotfiles/install-scripts/link-dotfiles.rb
