@@ -13,6 +13,7 @@ sudo -E apt install -y \
   curl \
   git \
   tmux \
+  tldr \
   autojump \
   shutter \
   rxvt-unicode \
@@ -52,7 +53,6 @@ $HOME/.dotfiles/install-scripts/postgresql/install.sh
 $HOME/.dotfiles/install-scripts/redis/install.sh
 $HOME/.dotfiles/install-scripts/thefuck/install.sh
 $HOME/.dotfiles/install-scripts/tig/install.sh
-$HOME/.dotfiles/install-scripts/tldr/install.sh
 $HOME/.dotfiles/install-scripts/tmuxinator/install.sh
 $HOME/.dotfiles/install-scripts/vim/install.sh
 $HOME/.dotfiles/install-scripts/zsh/install.sh
