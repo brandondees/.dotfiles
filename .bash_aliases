@@ -19,3 +19,7 @@ alias branches='git branches'
 alias fetch='git fetch --all --prune'
 alias remotes='git remote -v'
 alias pullup='git checkout master && git fetch --all && git pull upstream master'
+
+# Shortcuts
+alias thunderbolt_darken='ddcutil --display 1 setvcp 10 255'
+alias thunderbolt_brighten='ddcutil --display 1 setvcp 05 1'
