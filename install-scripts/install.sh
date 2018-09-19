@@ -8,6 +8,7 @@ sudo apt update
 sudo -E apt install -y \
   i3 \
   apt-utils \
+  snapd \
   wget \
   curl \
   git \
