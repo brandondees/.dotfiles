@@ -12,6 +12,7 @@ sudo -E apt install -y \
   curl \
   git \
   tmux \
+  autojump \
   shutter \
   rxvt-unicode \
   feh \
@@ -44,7 +45,6 @@ $HOME/.dotfiles/install-scripts/asdf/install.sh && source $HOME/.asdf/asdf.sh
 $HOME/.dotfiles/install-scripts/link-dotfiles.rb
 
 # Install other key tools with custom scripts
-$HOME/.dotfiles/install-scripts/autojump/install.sh
 $HOME/.dotfiles/install-scripts/google-chrome/install.sh
 $HOME/.dotfiles/install-scripts/maria-db/install.sh
 $HOME/.dotfiles/install-scripts/postgresql/install.sh
