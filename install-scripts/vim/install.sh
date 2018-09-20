@@ -12,6 +12,3 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # let &packpath = &runtimepath
 # source ~/.vimrc
 # EOF
-
-# Install plugins
-vim -EsX +PlugInstall +qall
