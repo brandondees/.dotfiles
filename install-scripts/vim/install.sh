@@ -14,4 +14,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # EOF
 
 # Install plugins
-vim -E +PlugInstall +qall
+vim -EsX +PlugInstall +qall
