@@ -12,6 +12,7 @@ sudo -E apt install -y \
   wget \
   curl \
   git \
+  editorconfig \
   tmux \
   tldr \
   autojump \
@@ -34,7 +35,9 @@ sudo -E apt install -y \
   scrot \
   nmap \
   libreadline-dev \
-  tzdata
+  tzdata \
+  sqlite3 \
+  libsqlite3-dev
 
 if [ ! -d ~/.dotfiles ]; then
   git clone git@github.com:brandondees/.dotfiles.git ~/.dotfiles || git clone https://github.com/brandondees/.dotfiles ~/.dotfiles
