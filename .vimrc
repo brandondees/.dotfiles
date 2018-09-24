@@ -78,9 +78,10 @@ Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }
+" Plug 'thoughtbot/vim-rspec'
+Plug 'janko-m/vim-test'
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0ng/vim-hybrid'
@@ -89,6 +90,7 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-mix-format'
+Plug 'editorconfig/editorconfig-vim'
 
 " ejs support
 Plug 'nikvdp/ejs-syntax'
