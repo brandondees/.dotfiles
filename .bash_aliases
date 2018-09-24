@@ -21,5 +21,5 @@ alias remotes='git remote -v'
 alias pullup='git checkout master && git fetch --all && git pull upstream master'
 
 # Shortcuts
-alias thunderbolt_darken='ddcutil --display 1 setvcp 10 255'
-alias thunderbolt_brighten='ddcutil --display 1 setvcp 05 1'
+alias thunderbolt_darken='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 10000'
+alias thunderbolt_brighten='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 45000'
