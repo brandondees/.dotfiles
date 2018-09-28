@@ -115,6 +115,8 @@ stty -ixon
 # FZF
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+FZF_CTRL_T_COMMAND="ag -g ''"
+FZF_DEFAULT_COMMAND="ag -g ''"
 
 # Tmuxinator autocompletion
 # and mux alias
