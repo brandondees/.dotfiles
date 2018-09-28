@@ -54,14 +54,21 @@ ZSH_THEME="robbyrussell"
 plugins=(
   asdf
   autojump
+  branch
   bundler
   common-aliases
+  docker
+  docker-compose
+  fzf
   gitfast
   rake
   ruby
   rails
+  thefuck
+  tig
   tmux
   tmuxinator
+  zsh_reload # run 'src' to refresh .zshrc
 )
 
 source ~/.bash_aliases
