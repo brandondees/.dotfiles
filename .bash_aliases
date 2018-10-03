@@ -1,8 +1,5 @@
 # Aliases
 
-alias home='cd ~ && ls -ABCF --color=auto'
-alias vi='vim'
-
 # Git Aliases
 alias gfc='git fetch upstream && git checkout upstream/master'
 alias gfr='git fetch upstream && git rebase -i upstream/master'
@@ -20,6 +17,10 @@ alias fetch='git fetch --all --prune'
 alias remotes='git remote -v'
 alias pullup='git checkout master && git fetch --all && git pull upstream master'
 
-# Shortcuts
+# Personal Shortcuts
+alias home='cd ~ && ls -ABCF --color=auto'
+alias vi='vim'
 alias thunderbolt_darken='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 10000'
 alias thunderbolt_brighten='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 45000'
+alias ding='paplay --volume 60000 ~/.dotfiles/sounds/Pop.aiff && paplay --volume 60000 ~/.dotfiles/sounds/Pop.aiff'
+
