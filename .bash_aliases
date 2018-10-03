@@ -24,3 +24,10 @@ alias thunderbolt_darken='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/u
 alias thunderbolt_brighten='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 45000'
 alias ding="echo $'\a' && paplay --volume 60000 /usr/share/sounds/freedesktop/stereo/complete.oga"
 
+## Personal Writing Habit Shortcuts
+alias writemode-enter-workdir="cd ~/Documents/Writing"
+alias writemode-create-file="date +'%Y-%m-%d-tbd.md' | xargs -o touch"
+alias writemode-setup="writemode-enter-workdir && writemode-create-file"
+alias writemode-edit-latest-file="ls -Art -1 | tail -n 1 | xargs -o vim"
+alias writemode="writemode-setup && writemode-vim-latest-file"
+alias writemode-resume="writemode-enter-workdir && writemode-edit-latest-file"
