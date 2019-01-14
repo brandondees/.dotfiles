@@ -27,7 +27,8 @@ alias ding="echo $'\a' && paplay --volume 60000 /usr/share/sounds/freedesktop/st
 ## Personal Writing Habit Shortcuts
 alias writemode-enter-workdir="cd ~/Documents/Writing"
 alias writemode-create-file="date +'%Y-%m-%d-tbd.md' | xargs -o touch"
+alias writemode-begin-file="date +'%Y-%m-%d-tbd.md' | xargs -o vim"
 alias writemode-setup="writemode-enter-workdir && writemode-create-file"
 alias writemode-edit-latest-file="ls -Art -1 | tail -n 1 | xargs -o vim"
-alias writemode="writemode-setup && writemode-vim-latest-file"
+alias writemode="writemode-enter-workdir && writemode-begin-file"
 alias writemode-resume="writemode-enter-workdir && writemode-edit-latest-file"
