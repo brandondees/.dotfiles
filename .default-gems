@@ -10,6 +10,9 @@ rubocop
 rubocop-rspec
 reek
 rubycritic
+ruby-lint
+fasterer
+debride
 brakeman
 bundler-audit
 tmuxinator
