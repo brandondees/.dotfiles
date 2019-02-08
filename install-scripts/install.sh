@@ -37,7 +37,8 @@ sudo -E apt install -y \
   libreadline-dev \
   tzdata \
   sqlite3 \
-  libsqlite3-dev
+  libsqlite3-dev \
+  libmagickwand-dev
 
 if [ ! -d ~/.dotfiles ]; then
   git clone git@github.com:brandondees/.dotfiles.git ~/.dotfiles || git clone https://github.com/brandondees/.dotfiles ~/.dotfiles
