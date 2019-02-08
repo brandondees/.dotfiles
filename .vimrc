@@ -1,3 +1,5 @@
+set nocompatible " vim, not vi
+
 " turn off mouse mode
 set mouse=c
 
@@ -32,8 +34,31 @@ set smartcase
 " fzf file fuzzy search
 nnoremap <C-p> :FZF<CR>
 
+" selecta
+" https://github.com/garybernhardt/selecta
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <leader>p :call SelectaCommand("find * -type f", "", ":e")<cr>
+
+
+
 " ag searching
-let g:ackprg = 'ag --vimgrep --smart-case'                                                   
+let g:ackprg = "ag --vimgrep --smart-case --hidden --ignore .git "
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
@@ -81,7 +106,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 " Plug 'thoughtbot/vim-rspec'
-Plug 'janko-m/vim-test'
+" Plug 'skywind3000/asyncrun.vim' " Augment Vim-Test
+Plug 'reinh/vim-makegreen' " Augment Vim-Test
+Plug 'janko-m/vim-test' " Multi-tool test runner commands
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0ng/vim-hybrid'
@@ -103,8 +130,11 @@ call plug#end()
 " Theme
 colorscheme darcula
 
+" See whitespace
+set list
+
 " Test Running
-let g:rspec_command = "!clear && bundle exec bin/rspec {spec}"
+" let g:rspec_command = "!clear && bundle exec bin/rspec {spec}"
 
 let g:mix_format_on_save = 1
 
@@ -120,7 +150,43 @@ map <leader>c :!ctags -R --languages=ruby --exclude=.git --exclude=log --tag-rel
 map <leader>co mmgg"+yG`m
 map <leader>' cs"'
 map <leader>" cs'"
-map <Leader>o :w<cr>:call RunNearestSpec()<CR>
+" map <Leader>o :w<cr>:call RunNearestSpec()<CR>
+
+" ALE Asynchronous Lint Engine Config
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+" Vim Test Config and Shortcuts
+" let test#strategy = 'asyncrun'
+let test#strategy = 'makegreen'
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+" GitGutter Config
+if exists('&signcolumn')
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+let g:gitgutter_highlight_lines = 1
+
+" Line Length Guide
+set textwidth=80
+set colorcolumn=+1
+
+" No local swp and ~ files
+set directory=/tmp
+
+" Spellcheck on by default for markdown
+autocmd BufRead,BufNewFile *md setlocal spell
 
 function! RenameFile()
   let old_name = expand('%')
