@@ -109,15 +109,28 @@ eval $(thefuck --alias qwer)
 stty -ixon
 
 # asdf version management
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
+export PATH=$PATH:/home/dees/.asdf/installs/rust/stable/bin
 
 # FZF
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 FZF_CTRL_T_COMMAND="ag -g ''"
-FZF_DEFAULT_COMMAND="ag -g ''"
+FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
 
 # Tmuxinator autocompletion
 # and mux alias
 source ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/home/dees/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# golang bin path
+export GOPATH=~/go
+export PATH=$GOPATH/bin:$PATH
+
+# Use a user-local bin path for handy personal utilities
+export PATH="$HOME/bin:$PATH"
