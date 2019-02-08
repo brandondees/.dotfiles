@@ -23,6 +23,7 @@ alias vi='vim'
 alias thunderbolt_darken='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 10000'
 alias thunderbolt_brighten='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 45000'
 alias ding="echo $'\a' && paplay --volume 60000 /usr/share/sounds/freedesktop/stereo/complete.oga"
+alias servefiles="python3 -m http.server"
 
 ## Personal Writing Habit Shortcuts
 alias writemode-enter-workdir="cd ~/Documents/Writing"
