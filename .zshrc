@@ -72,6 +72,7 @@ plugins=(
 )
 
 source ~/.bash_aliases
+source ~/.dotfiles/functions/*
 
 # autostart tmux
 export ZSH_TMUX_AUTOSTART=true
@@ -90,6 +91,11 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='vim'
+fi
+
+# If nvim is installed, we'll use that as vim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
 fi
 
 # Compilation flags
