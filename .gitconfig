@@ -1,6 +1,6 @@
 [user]
 	name = Brandon Dees
-	email = brandondees@gmail.com
+	useConfigOnly = true
 [core]
 	editor = vim
 	excludesfile = /home/dees/.gitignore_global
