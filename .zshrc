@@ -140,3 +140,7 @@ export PATH=$GOPATH/bin:$PATH
 
 # Use a user-local bin path for handy personal utilities
 export PATH="$HOME/bin:$PATH"
+
+# Run `mkdir .git/safe` on trusted projects to get local bins in path -- H/T Chris Thorn (thorncp)
+export PATH=".git/safe/../../bin:$PATH"
+
