@@ -1,6 +1,7 @@
-ruby 2.6.0
-nodejs 10.9.0
+ruby 2.5.1
+nodejs 11.12.0
 elixir 1.7.3
 erlang 21.0.7
 rust stable
 golang 1.11.5
+python 2.7.16
