@@ -7,7 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="" # using pure power prompt https://github.com/sindresorhus/pure#install
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,7 +57,7 @@ plugins=(
   autojump
   branch
   bundler
-  common-aliases
+  # common-aliases
   docker
   docker-compose
   fzf
@@ -75,7 +76,10 @@ source ~/.bash_aliases
 source ~/.dotfiles/functions/*
 
 # autostart tmux
+export ZSH_TMUX_FIXTERM=true
 export ZSH_TMUX_AUTOSTART=true
+# but don't auto connect to an existing session, make a new one
+export ZSH_TMUX_AUTOCONNECT=false
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,3 +148,14 @@ export PATH="$HOME/bin:$PATH"
 # Run `mkdir .git/safe` on trusted projects to get local bins in path -- H/T Chris Thorn (thorncp)
 export PATH=".git/safe/../../bin:$PATH"
 
+# https://sw.kovidgoyal.net/kitty/#configuring-kitty
+# kitty completion
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
+# Pure power prompt https://github.com/sindresorhus/pure#install
+fpath+=('/home/dees/.asdf/installs/nodejs/11.12.0/.npm/lib/node_modules/pure-prompt/functions')
+autoload -U promptinit; promptinit
+prompt pure
