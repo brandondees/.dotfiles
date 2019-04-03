@@ -22,7 +22,7 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " relative line numbers
-set relativenumber 
+set relativenumber
 set number
 
 " search options
@@ -30,9 +30,6 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-
-" fzf file fuzzy search
-nnoremap <C-p> :FZF<CR>
 
 " selecta
 " https://github.com/garybernhardt/selecta
@@ -73,6 +70,12 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
+" copy/paste clipboard more easily
+" vnoremap <Leader>c "*y
+" noremap <Leader>v "*p
+vnoremap <C-c> "+y
+noremap <C-v> "+p
+
 " additional escapes
 imap jk <esc>
 imap kj <esc>
@@ -95,6 +98,7 @@ inoremap <Right> <nop>
 " Plugins!
 call plug#begin('~/.vim/plugged')
 
+Plug 'altercation/vim-colors-solarized'
 Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -128,7 +132,9 @@ Plug 'nikvdp/ejs-syntax'
 call plug#end()
 
 " Theme
+set background=dark
 colorscheme darcula
+colorscheme solarized
 
 " See whitespace
 set list
@@ -152,6 +158,9 @@ map <leader>' cs"'
 map <leader>" cs'"
 " map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 
+" fzf file fuzzy search
+nnoremap <C-p> :FZF<CR>
+
 " ALE Asynchronous Lint Engine Config
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
@@ -160,6 +169,19 @@ let g:ale_linters = {
 let g:ale_fixers = {'javascript': ['standard']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+
+" lint after 1000ms after changes are made both on insert mode and normal mode
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_delay = 1000
+
+" use nice symbols for errors and warnings
+" let g:ale_sign_error = '✗\ '
+" let g:ale_sign_warning = '⚠\ '
+
+" fixer configurations
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
 
 " Vim Test Config and Shortcuts
 " let test#strategy = 'asyncrun'
