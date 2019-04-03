@@ -9,7 +9,7 @@ xset +dpms dpms 15 15 15
 scrot /tmp/screen_locked.png
 
 # blur
-convert /tmp/screen_locked.png -blur 0x5 /tmp/screen_locked.png
+convert /tmp/screen_locked.png -blur 100x100 /tmp/screen_locked.png
 # Lock screen displaying this image.
 i3lock -n -i /tmp/screen_locked.png
 
