@@ -1,5 +1,7 @@
+express
 neovim
+pug
 ramda
 request
-express
-pug
+tldr
+pure-prompt
