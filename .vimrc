@@ -126,6 +126,10 @@ Plug 'editorconfig/editorconfig-vim'
 " ejs support
 Plug 'nikvdp/ejs-syntax'
 
+" Fancy Markdown mode
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " Wakatime, a time spent coding tracker
 " Plug 'wakatime/vim-wakatime'
 
@@ -209,6 +213,10 @@ set directory=/tmp
 
 " Spellcheck on by default for markdown
 autocmd BufRead,BufNewFile *md setlocal spell
+
+" vim-markdown default tweaks
+let g:vim_markdown_folding_disabled = 1
+set conceallevel=2 " https://github.com/plasticboy/vim-markdown#syntax-concealing
 
 function! RenameFile()
   let old_name = expand('%')
