@@ -41,23 +41,31 @@ sudo -E apt install -y \
   libmagickwand-dev
 
 if [ ! -d ~/.dotfiles ]; then
-  git clone git@github.com:brandondees/.dotfiles.git ~/.dotfiles || git clone https://github.com/brandondees/.dotfiles ~/.dotfiles
+  git clone --bare git@github.com:brandondees/.dotfiles.git $HOME/.dotfiles \
+    || git clone --bare https://github.com/brandondees/.dotfiles $HOME/.dotfiles
 fi
 
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfile checkout
+
+export INSTALL_SCRIPTS=$HOME/.config/install-scripts/
 # Install tool version manager and ruby
-$HOME/.dotfiles/install-scripts/asdf/install.sh && source $HOME/.asdf/asdf.sh
+# $HOME/.dotfiles/install-scripts/asdf/install.sh && source $HOME/.asdf/asdf.sh
+$INSTALL_SCRIPTS/asdf/install.sh && source $HOME/.asdf/asdf.sh
 
 # Using ruby, hook up the dotfiles
-$HOME/.dotfiles/install-scripts/link-dotfiles.rb
+# $HOME/.dotfiles/install-scripts/link-dotfiles.rb
 
-# Install other key tools with custom scripts
-$HOME/.dotfiles/install-scripts/google-chrome/install.sh
-$HOME/.dotfiles/install-scripts/maria-db/install.sh
-$HOME/.dotfiles/install-scripts/postgresql/install.sh
-$HOME/.dotfiles/install-scripts/redis/install.sh
-$HOME/.dotfiles/install-scripts/thefuck/install.sh
-$HOME/.dotfiles/install-scripts/tig/install.sh
-$HOME/.dotfiles/install-scripts/tmuxinator/install.sh
-$HOME/.dotfiles/install-scripts/vim/install.sh
-$HOME/.dotfiles/install-scripts/zsh/install.sh
+# Install other essential tools with custom scripts
+$INSTALL_SCRIPTS/google-chrome/install.sh
+$INSTALL_SCRIPTS/maria-db/install.sh
+$INSTALL_SCRIPTS/postgresql/install.sh
+$INSTALL_SCRIPTS/redis/install.sh
+$INSTALL_SCRIPTS/thefuck/install.sh
+$INSTALL_SCRIPTS/tig/install.sh
+$INSTALL_SCRIPTS/tmuxinator/install.sh
+$INSTALL_SCRIPTS/vim/install.sh
+$INSTALL_SCRIPTS/zsh/install.sh
 
+# Additional install scripts are available but not deemed essential to a minimal
+# dev environment, so go look and see.
