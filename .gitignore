@@ -4,3 +4,16 @@
 
 # Install script checks out the repo locally
 install-scripts/selecta/selecta
+
+# Homedir stuff I don't want to commit
+.yarnrc
+.yarn/
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Projects
+Steam
+Videos
+virtualbox_vms
