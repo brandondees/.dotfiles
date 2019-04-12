@@ -138,13 +138,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/home/dees/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
-# golang bin path
-export GOPATH=~/go
-export PATH=$GOPATH/bin:$PATH
-
-# Use a user-local bin path for handy personal utilities
-export PATH="$HOME/bin:$PATH"
-
 # Run `mkdir .git/safe` on trusted projects to get local bins in path -- H/T Chris Thorn (thorncp)
 export PATH=".git/safe/../../bin:$PATH"
 
