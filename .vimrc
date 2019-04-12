@@ -198,7 +198,7 @@ if exists('&signcolumn')
 else
   let g:gitgutter_sign_column_always = 1
 endif
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0 " don't highlight full lines, it messes with syntax highlighting
 
 " Line Length Guide
 set textwidth=80
