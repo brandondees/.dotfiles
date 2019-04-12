@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sh -c '"/home/dees/tor-browser_en-US/Browser/start-tor-browser" --detach' dummy %k
