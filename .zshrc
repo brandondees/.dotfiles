@@ -57,7 +57,6 @@ plugins=(
   autojump
   branch
   bundler
-  # common-aliases
   docker
   docker-compose
   fzf
@@ -71,9 +70,6 @@ plugins=(
   tmuxinator
   zsh_reload # run 'src' to refresh .zshrc
 )
-
-source ~/.bash_aliases
-source ~/.dotfiles/functions/*
 
 # autostart tmux
 export ZSH_TMUX_FIXTERM=true
@@ -152,3 +148,7 @@ kitty + complete setup zsh | source /dev/stdin
 fpath+=('/home/dees/.asdf/installs/nodejs/11.12.0/.npm/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
 prompt pure
+
+# Use my own aliases and functions
+source ~/.bash_aliases
+source ~/.dotfiles/functions/*
