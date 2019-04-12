@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+echo "Installing Wireguard"
+sudo add-apt-repository ppa:wireguard/wireguard
+sudo apt-get update
+sudo apt-get install -y wireguard
+
+echo "Installing ProtonVPN"
 sudo apt-get install -y \
   openvpn \
   dialog \
@@ -18,4 +24,3 @@ echo "The Protonvpn cli tool should be ready to configure and use now."
 echo "you can run the following to configure and activate the vpn:"
 echo "sudo protonvpn-cli -init"
 echo "sudo protonvpn-cli -connect"
-
