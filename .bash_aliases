@@ -20,10 +20,8 @@ alias pullup='git checkout master && git fetch --all && git pull upstream master
 # Personal Shortcuts
 alias home='cd ~ && ls -ABCF --color=auto'
 alias vi='vim'
-alias ls='ls -F'
-alias la='ls -AF'
-# alias thunderbolt_darken='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 10000'
-# alias thunderbolt_brighten='sudo ~/.dotfiles/acdcontrol/acdcontrol --silent /dev/usb/hiddev4 -- 45000'
+alias la='ls -AF --color=auto'
+alias ls='ls -F --color=auto'
 alias ding="echo $'\a'; paplay --volume 50000 /usr/share/sounds/freedesktop/stereo/complete.oga &"
 alias servefiles="python3 -m http.server"
 
@@ -35,3 +33,6 @@ alias writemode-setup="writemode-enter-workdir && writemode-create-file"
 alias writemode-edit-latest-file="ls -Art -1 | tail -n 1 | xargs -o vim"
 alias writemode="writemode-enter-workdir && writemode-begin-file"
 alias writemode-resume="writemode-enter-workdir && writemode-edit-latest-file"
+
+# Dotfile management per https://www.atlassian.com/git/tutorials/dotfiles
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
