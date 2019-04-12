@@ -18,3 +18,6 @@ sudo usermod $(whoami) -aG i2c
 # Check if installation is working
 ddcutil environment
 
+# I've also made progress with https://github.com/warvariuc/acdcontrol
+# and it can be run without sudo by using:
+# `sudo setcap cap_dac_override+ep path/to/acdcontrol`
