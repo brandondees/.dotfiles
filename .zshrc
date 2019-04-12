@@ -151,4 +151,4 @@ prompt pure
 
 # Use my own aliases and functions
 source ~/.bash_aliases
-source ~/.dotfiles/functions/*
+source ~/.functions/*
