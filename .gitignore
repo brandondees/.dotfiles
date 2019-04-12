@@ -1,3 +1,6 @@
 .dotfiles
 .env
 **/restic_creds.env
+
+# Install script checks out the repo locally
+install-scripts/selecta/selecta
