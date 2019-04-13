@@ -117,7 +117,7 @@ stty -ixon
 # asdf version management
 # . $HOME/.asdf/asdf.sh
 # . $HOME/.asdf/completions/asdf.bash
-export PATH=$PATH:/home/dees/.asdf/installs/rust/stable/bin
+export PATH=$PATH:$HOME/.asdf/installs/rust/stable/bin
 
 # FZF
 # https://github.com/junegunn/fzf
@@ -127,12 +127,12 @@ FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
 
 # Tmuxinator autocompletion
 # and mux alias
-source ~/.dotfiles/install-scripts/tmuxinator/tmuxinator.zsh
+source $HOME/install-scripts/tmuxinator/tmuxinator.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/home/dees/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Run `mkdir .git/safe` on trusted projects to get local bins in path -- H/T Chris Thorn (thorncp)
 export PATH=".git/safe/../../bin:$PATH"
