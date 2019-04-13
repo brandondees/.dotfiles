@@ -1,19 +1,71 @@
+# Dotfile repo setup
 .dotfiles
+
+# Dotfiles explicitly excluded
+.viminfo
+.*_history
+.lesshst
+
+# Avoid sensitive bits
+.boto
 .env
+.netrc
+.my.cnf
+.ssh
 **/restic_creds.env
 
-# Install script checks out the repo locally
+# Install scripts related
 install-scripts/selecta/selecta
+bin/kitty
+acdcontrol
 
-# Homedir stuff I don't want to commit
+# Regular homedir stuff I don't want to commit
+.asdf
+.cache
+.dbus
+.docker
+.fzf
+.gem
+.gimp*
+.gnome
+.gvfs
+.lastpass
+.launchpadlib
+.local
+.mozilla
+.node-gyp
+.npm
+.oh-my-zsh
+.protonvpn-cli
+.standard-v**-cache
+.steam*
+.thumbnails
+.tldr
+.var
+.vim
 .yarnrc
-.yarn/
+.yarn
+.zcompdump*
+.zoom
+Camera**
 Desktop
 Documents
 Downloads
+FiraxisLive
+go
 Music
+Pharo
 Pictures
 Projects
+snap
 Steam
+tor-browser_en-US
 Videos
 virtualbox_vms
+Windward
+
+# Clutter
+node_modules
+**node_modules
+**node_modules**
+package-lock.json
