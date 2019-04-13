@@ -1,6 +1,7 @@
 [user]
 	name = Brandon Dees
 	useConfigOnly = true
+	email = dees@pm.me
 [core]
 	editor = vim
 	excludesfile = /home/dees/.gitignore_global
@@ -15,8 +16,11 @@
 [difftool]
 	prompt = false
 [alias]
-        d = difftool
-        co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
+  d = difftool
+  co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
+  commitm = commit -m
+  status = status --show-stash
+  s = status --short
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
