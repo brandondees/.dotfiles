@@ -6,7 +6,7 @@ function brightness() {
   THUNDERBOLT_MIN=0
   NEWVAL=$1
 
-  CONTROL_PROGRAM_PATH="/home/dees/.dotfiles/acdcontrol/acdcontrol"
+  CONTROL_PROGRAM_PATH="/home/dees/acdcontrol/acdcontrol"
   # THUNDERBOLT_DEVICE='/dev/usb/hiddev4'
   THUNDERBOLT_DEVICE=`$CONTROL_PROGRAM_PATH --detect --silent /dev/usb/hiddev* | grep 'Apple Cinema HD Display' | cut -d':' -f1`
   echo "thunderbolt device selected: $THUNDERBOLT_DEVICE"
