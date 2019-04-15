@@ -7,6 +7,8 @@ sudo apt update
 # get all the basic dependencies and utilities
 sudo -E apt install -y \
   i3 \
+  rofi \
+  xdotool \
   apt-utils \
   snapd \
   wget \
