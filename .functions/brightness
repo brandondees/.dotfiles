@@ -4,17 +4,18 @@
 function brightness() {
   THUNDERBOLT_MAX=65535
   THUNDERBOLT_MIN=0
-  NEWVAL=$1
+
+  # calculate percentage of max
+  NEWVAL=$(bc -l <<< $THUNDERBOLT_MAX*$1/100)
+  echo "requested $1 %, $NEWVAL"
 
   CONTROL_PROGRAM_PATH="/home/dees/acdcontrol/acdcontrol"
   # THUNDERBOLT_DEVICE='/dev/usb/hiddev4'
   THUNDERBOLT_DEVICE=`$CONTROL_PROGRAM_PATH --detect --silent /dev/usb/hiddev* | grep 'Apple Cinema HD Display' | cut -d':' -f1`
   echo "thunderbolt device selected: $THUNDERBOLT_DEVICE"
   OLDVAL=`$CONTROL_PROGRAM_PATH $THUNDERBOLT_DEVICE --brief --silent`
-
+  echo "brightness was $OLDVAL"
 
   $CONTROL_PROGRAM_PATH $THUNDERBOLT_DEVICE $NEWVAL --silent
-
-  echo "brightness was $OLDVAL"
   echo "brightness is now `$CONTROL_PROGRAM_PATH $THUNDERBOLT_DEVICE --brief --silent`"
 }
