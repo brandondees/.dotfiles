@@ -6,6 +6,7 @@
 .*_history
 .lesshst
 .selected_editor
+.config/pavucontrol.ini
 
 # Avoid sensitive bits
 .boto
@@ -15,6 +16,11 @@
 .ssh
 **/restic_creds.env
 .rnd
+.config/keybase/
+.config/Keybase/
+.config/Signal/
+.gnupg/*
+!.gnupg/gpg.conf
 
 # Install scripts related
 install-scripts/selecta/selecta
@@ -27,12 +33,26 @@ install-scripts/torbrowser/*.tar.xz
 # App configs that should be per-machine
 .config/vlc
 .config/zoomus.conf
+.config/nautilus
+.config/syncthing
+.wavemonrc
 
 # Regular homedir stuff I don't want to commit
+*.log
 .asdf
 .bundle
 .cache
 .chromedriver-helper
+.config/discord/
+.config/pinta/
+.config/VeraCrypt/
+.config/Slack/
+.config/BraveSoftware/
+.config/Kalypso Media/
+.config/Super_Galaxy_Squadron_EX_Turbo/
+.config/gtk*/
+.config/Unknown\ Organization/
+.config/inkscape
 .dbus
 .docker
 .fontconfig
@@ -44,11 +64,13 @@ install-scripts/torbrowser/*.tar.xz
 .lastpass
 .launchpadlib
 .local
+.links2
 .mozilla
 .node-gyp
 .npm
 .oh-my-zsh
 .protonvpn-cli
+.shutter
 .standard-v**-cache
 .steam*
 .thumbnails
