@@ -5,6 +5,7 @@
 .viminfo
 .*_history
 .lesshst
+.selected_editor
 
 # Avoid sensitive bits
 .boto
@@ -13,17 +14,28 @@
 .my.cnf
 .ssh
 **/restic_creds.env
+.rnd
 
 # Install scripts related
 install-scripts/selecta/selecta
 bin/kitty
 acdcontrol
+.config/rofi-charpicker
+install-scripts/torbrowser/*.tar.xz
+.sudo_as_admin_successful
+
+# App configs that should be per-machine
+.config/vlc
+.config/zoomus.conf
 
 # Regular homedir stuff I don't want to commit
 .asdf
+.bundle
 .cache
+.chromedriver-helper
 .dbus
 .docker
+.fontconfig
 .fzf
 .gem
 .gimp*
@@ -43,9 +55,11 @@ acdcontrol
 .tldr
 .var
 .vim
+.xournal
 .yarnrc
 .yarn
 .zcompdump*
+.zshrc.zwc
 .zoom
 Camera**
 Desktop
@@ -63,9 +77,11 @@ tor-browser_en-US
 Videos
 virtualbox_vms
 Windward
+.wget-hsts
 
 # Clutter
 node_modules
 **node_modules
 **node_modules**
 package-lock.json
+.config/Wasteland2DC
