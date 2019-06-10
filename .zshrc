@@ -139,10 +139,10 @@ export PATH=".git/safe/../../bin:$PATH"
 
 # https://sw.kovidgoyal.net/kitty/#configuring-kitty
 # kitty completion
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+# kitty + complete setup zsh | source /dev/stdin
 
 # Pure power prompt https://github.com/sindresorhus/pure#install
 fpath+=('/home/dees/.asdf/installs/nodejs/11.12.0/.npm/lib/node_modules/pure-prompt/functions')
@@ -151,4 +151,4 @@ prompt pure
 
 # Use my own aliases and functions
 source ~/.bash_aliases
-source ~/.functions/*
+source ~/functions/*
