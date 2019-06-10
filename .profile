@@ -44,3 +44,6 @@ ln -s /tmp/$USER/google-chrome-cache ~/.cache/google-chrome
 # that I don't care about from getting into my fzf results
 FZF_CTRL_T_COMMAND="ag -g ''"
 FZF_DEFAULT_COMMAND="ag -g ''"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
