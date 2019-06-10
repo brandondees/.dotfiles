@@ -18,12 +18,15 @@ alias remotes='git remote -v'
 alias pullup='git checkout master && git fetch --all && git pull upstream master'
 
 # Personal Shortcuts
-alias home='cd ~ && ls -ABCF --color=auto'
+alias home='cd ~ && ls -ABCF'
 alias vi='vim'
-alias la='ls -AF --color=auto'
-alias ls='ls -F --color=auto'
+alias la='ls -AF'
+alias ls='ls -F'
 alias ding="echo $'\a'; paplay --volume 50000 /usr/share/sounds/freedesktop/stereo/complete.oga &"
 alias servefiles="python3 -m http.server"
+
+# Generate an SSH key easily using best practices (update periodically)
+alias ssh-keyme="ssh-keygen -t ed25519 -o -a 100 -C 'dees@pm.me'"
 
 ## Personal Writing Habit Shortcuts
 alias writemode-enter-workdir="cd ~/Documents/Writing"
@@ -35,4 +38,4 @@ alias writemode="writemode-enter-workdir && writemode-begin-file"
 alias writemode-resume="writemode-enter-workdir && writemode-edit-latest-file"
 
 # Dotfile management per https://www.atlassian.com/git/tutorials/dotfiles
-alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
