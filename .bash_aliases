@@ -24,6 +24,7 @@ alias la='ls -AF'
 alias ls='ls -F'
 alias ding="echo $'\a'; paplay --volume 50000 /usr/share/sounds/freedesktop/stereo/complete.oga &"
 alias servefiles="python3 -m http.server"
+alias outdated='bundle outdated --only-explicit;yarn outdated'
 
 # Generate an SSH key easily using best practices (update periodically)
 alias ssh-keyme="ssh-keygen -t ed25519 -o -a 100 -C 'dees@pm.me'"
