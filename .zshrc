@@ -90,12 +90,12 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # If nvim is installed, we'll use that as vim
 if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
+  alias vim='nvim --startuptime ~/vim.log'
 fi
 
 # Compilation flags
