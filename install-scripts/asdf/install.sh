@@ -19,4 +19,4 @@ asdf global ruby 2.5.1
 asdf install adr-tools 3.0.0
 asdf global adr-tools 3.0.0
 
-cat $HOME/.dotfiles/.default-gems | xargs gem install
+cat $HOME/.default-gems | xargs gem install

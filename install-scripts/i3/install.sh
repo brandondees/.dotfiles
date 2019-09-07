@@ -5,6 +5,7 @@ sudo -E apt install -y \
   i3 \
   rofi \
   xdotool \
+  tint2 \
   feh \
   scrot \
   redshift \
