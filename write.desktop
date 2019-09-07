@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Write
+GenericName=Writing Mode
+Comment=Focus on writing with a preconfigured vim environment and starter file.
+Exec=kitty --name write --detach --start-as fullscreen --session kitty-writemode
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+X-GNOME-Autostart-enabled=true
+Hidden=false
+Icon=

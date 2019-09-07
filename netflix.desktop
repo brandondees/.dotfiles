@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Netflix
+GenericName=Movies and TV
+Comment=Watch shows and movies
+Exec=firefox --no-remote -P Netflix
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+X-GNOME-Autostart-enabled=true
+Hidden=false
+Icon=
