@@ -50,7 +50,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>p :call SelectaCommand("find * -type f", "", ":e")<cr>
+" nnoremap <leader>p :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 
 
@@ -73,8 +73,12 @@ imap <C-s> <esc>:w<CR>
 " copy/paste clipboard more easily
 " vnoremap <Leader>c "*y
 " noremap <Leader>v "*p
-vnoremap <C-c> "+y
-noremap <C-v> "+p
+" vnoremap <C-c> "+y
+" noremap <C-v> "+p
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 " additional escapes
 imap jk <esc>
@@ -99,6 +103,7 @@ inoremap <Right> <nop>
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -116,7 +121,6 @@ Plug 'janko-m/vim-test' " Multi-tool test runner commands
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0ng/vim-hybrid'
-Plug 'blueshirts/darcula'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
@@ -129,6 +133,8 @@ Plug 'nikvdp/ejs-syntax'
 " Fancy Markdown mode
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+
+Plug 'junegunn/goyo.vim'
 
 " Wakatime, a time spent coding tracker
 " Plug 'wakatime/vim-wakatime'
@@ -143,6 +149,7 @@ colorscheme desert
 
 " See whitespace
 set list
+set listchars=space:\ ,eol:↵,tab:>·,trail:␣,extends:>,precedes:<
 
 " Test Running
 " let g:rspec_command = "!clear && bundle exec bin/rspec {spec}"
@@ -163,10 +170,15 @@ map <leader>' cs"'
 map <leader>" cs'"
 " map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 
-" fzf file fuzzy search
-nnoremap <C-p> :FZF<CR>
+" fzf file fuzzy search nnoremap <C-p> :FZF<CR> fzf file fuzzy search that
+" respects .gitignore If we're in a git directory, show only files that are
+" committed, staged, or unstaged If we're not in a git directory, use regular
+" :Files
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
 " ALE Asynchronous Lint Engine Config
+" Show full linter message detail with leader d
+nnoremap <leader>d :ALEDetail<CR>
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'javascript': ['standard'],
