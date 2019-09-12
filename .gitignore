@@ -107,3 +107,11 @@ node_modules
 **node_modules**
 package-lock.json
 .config/Wasteland2DC
+.DS_Store
+.CFUserTextEncoding
+.config/MionixHub/
+.papertrail.yml
+Applications
+Library
+Movies
+Public

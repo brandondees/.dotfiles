@@ -76,6 +76,7 @@ export ZSH_TMUX_FIXTERM=true
 export ZSH_TMUX_AUTOSTART=true
 # but don't auto connect to an existing session, make a new one
 export ZSH_TMUX_AUTOCONNECT=false
+# export ZSH_TMUX_ITERM2=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,15 +95,17 @@ else
 fi
 
 # If nvim is installed, we'll use that as vim
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
+# if type nvim > /dev/null 2>&1; then
+#   alias vim='nvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
+eval "$(ssh-agent)"
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 # added by travis gem
 # [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
@@ -113,6 +116,37 @@ eval $(thefuck --alias qwer)
 
 # for vim control+s
 stty -ixon
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# Environment Variables
+if [ -f "$HOME/.env" ]; then
+    . "$HOME/.env"
+fi
+
+
+# Load Postgres.app location into path if present
+if [ -d "/Applications/Postgres.app/Contents/Versions/latest/bin" ] ; then
+    PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+fi
+# Same for redis.app http://jpadilla.github.io/redisapp/
+if [ -d "/Applications/Redis.app/Contents/Resources/Vendor/redis/bin" ] ; then
+  PATH="/Applications/Redis.app/Contents/Resources/Vendor/redis/bin:$PATH"
+fi
+
+# # Load iterm2's shell integration features if present
+# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # asdf version management
 # . $HOME/.asdf/asdf.sh
@@ -151,4 +185,4 @@ prompt pure
 
 # Use my own aliases and functions
 source ~/.bash_aliases
-source ~/functions/*
+source ~/.functions/*
