@@ -16,6 +16,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Load Postgres.app location into path if present
+if [ -d "/Applications/Postgres.app/Contents/Versions/latest/bin" ] ; then
+    PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
@@ -46,4 +51,3 @@ FZF_CTRL_T_COMMAND="ag -g ''"
 FZF_DEFAULT_COMMAND="ag -g ''"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
