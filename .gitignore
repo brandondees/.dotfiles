@@ -115,3 +115,9 @@ Applications
 Library
 Movies
 Public
+.babel.json
+.bash_sessions/
+.aptible/
+.Xauthority
+.config/configstore/
+.sqltools-setup
