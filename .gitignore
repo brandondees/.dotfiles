@@ -45,6 +45,7 @@ install-scripts/torbrowser/*.tar.xz
 .chromedriver-helper
 .config/discord/
 .config/pinta/
+.config/Pinta/
 .config/VeraCrypt/
 .config/Slack/
 .config/BraveSoftware/
@@ -121,3 +122,4 @@ Public
 .Xauthority
 .config/configstore/
 .sqltools-setup
+.pulse-cookie
