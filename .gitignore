@@ -45,6 +45,7 @@ install-scripts/torbrowser/*.tar.xz
 .chromedriver-helper
 .config/discord/
 .config/pinta/
+.config/Pinta/
 .config/VeraCrypt/
 .config/Slack/
 .config/BraveSoftware/
@@ -107,3 +108,4 @@ node_modules
 **node_modules**
 package-lock.json
 .config/Wasteland2DC
+.pulse-cookie
