@@ -1,6 +1,8 @@
 ! Fonts
 URxvt.font:     xft:Inconsolata:size=10:antialias=true
 URxvt.boldFont: xft:Inconsolata:bold:size=10:antialias=true
+URxvt.font:     xft:Noto Mono:size=16:antialias=true
+URxvt.boldFont: xft:Noto Mono:bold:size=16:antialias=true
 
 URxvt.letterSpace: -1
 
@@ -19,7 +21,7 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.perl-ext-common: default,selection-to-clipboard
 
 ! double click selection delims
-URxvt*cutchars: ()*,<>[]{}|`""'' 
+URxvt*cutchars: ()*,<>[]{}|`""''
 
 ! Theme
 ! special
