@@ -137,8 +137,9 @@ call plug#end()
 
 " Theme
 set background=dark
-colorscheme darcula
-colorscheme solarized
+colorscheme desert
+" colorscheme darcula
+" colorscheme solarized
 
 " See whitespace
 set list
