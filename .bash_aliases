@@ -39,3 +39,6 @@ alias writemode-resume="writemode-enter-workdir && writemode-edit-latest-file"
 
 # Dotfile management per https://www.atlassian.com/git/tutorials/dotfiles
 alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+
+# Use the best available search tool
+alias ag=rg
