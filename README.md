@@ -10,12 +10,19 @@ to my own liking from there.
 ## Usage
 
 see [this](https://www.atlassian.com/git/tutorials/dotfiles)
+
 * `alias dotfile='/usr/bin/git --git-dir=$HOME/<choose_a_dir>/ --work-tree=$HOME'`
 * `git clone --bare <this_repo> ~/<choose_a_dir>`
 * `cd ~`
 * `dotfile checkout`
 
+I've added `dotfiles_install.sh` to help expedite this, double check the
+directories involved.
+
 You may need to move some conflicting default files out of the way.
+
+This only sets up the dotfiles repo, you still have install scripts to run
+optionally to set up the various tools.
 
 Optionally to only see explicitly tracked files in status etc.
 `config config --local status.showUntrackedFiles no`
