@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+# TODO: detect system type, and branch accordingly
+
+sudo pacman -S $1
