@@ -123,3 +123,9 @@ Public
 .config/configstore/
 .sqltools-setup
 .pulse-cookie
+.config/GIMP/
+.config/gthumb/
+.config/Empathy/
+.config/Kvantum/
+.config/QtProject.conf
+.config/Trolltech.conf
