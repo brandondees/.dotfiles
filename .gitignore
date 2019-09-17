@@ -129,3 +129,12 @@ Public
 .config/Kvantum/
 .config/QtProject.conf
 .config/Trolltech.conf
+Templates
+Phone Downloads
+.config/uGet
+.VeraCrypt-lock-dees
+.face
+.pki
+.esd_auth
+.config/qt5ct
+.config/syncthing-gtk
