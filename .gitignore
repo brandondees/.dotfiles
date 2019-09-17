@@ -140,3 +140,7 @@ Phone Downloads
 .config/syncthing-gtk
 .config/nitrogen
 .dotfiles.git
+.config/Synergy
+.config/pamac
+.config/thefuck/
+!.config/thefuck/settings.py
