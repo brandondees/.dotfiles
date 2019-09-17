@@ -138,3 +138,5 @@ Phone Downloads
 .esd_auth
 .config/qt5ct
 .config/syncthing-gtk
+.config/nitrogen
+.dotfiles.git
