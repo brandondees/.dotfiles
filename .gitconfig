@@ -23,6 +23,7 @@
   status = status --show-stash
   s = status --short
   ghclone = !sh -c 'git clone git@github.com:$1.git $2' -
+  ignore = !sh -c 'echo $1 >> .gitignore' -
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
