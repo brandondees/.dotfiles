@@ -3,7 +3,7 @@
 	useConfigOnly = true
 	email = dees@pm.me
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/dees/.gitignore_global
 [push]
 	default = simple
