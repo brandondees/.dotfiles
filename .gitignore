@@ -144,3 +144,7 @@ Phone Downloads
 .config/pamac
 .config/thefuck/
 !.config/thefuck/settings.py
+.synergy
+.config/dconf
+.config/menus/
+.config/caffeine
