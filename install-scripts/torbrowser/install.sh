@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
+# TODO: test for lynx isntalled, install if not
 echo "Downloading torbrowser for linux, this can take a while."
 
-# Fetch the regular browser download page
-# find what resembles the latest linux download link
-# cut away everything from that line that's not the download url
-# follow the download url (including redirects) to fetch the file
-# extract the download to a standard location where it's ready for use
-curl -s https://www.torproject.org/download/ \
+DOWNLOAD_PAGE=https://www.torproject.org/download/
+lynx -dump -hiddenlinks=listonly $DOWNLOAD_PAGE \
   | grep "https://www.torproject.org/dist/torbrowser/.*/tor-browser-linux64-.*_en-US.tar.xz" \
-  | sed 's/.*href="//' \
-  | sed 's/">//' \
-  | xargs curl -#GL --output downloaded.tar.xz
+  | cut -d' ' -f4- \
+  | wget -i-
 
-tar -xf downloaded.tar.xz -C $HOME
+# TODO: use .asc to verify sig
+
+echo 'torbrowser downloaded, extracting to home...'
+tar -xf *.tar.xz -C $HOME
