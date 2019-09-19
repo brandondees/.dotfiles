@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="" # using pure power prompt https://github.com/sindresorhus/pure#install
 
 # Uncomment the following line to use case-sensitive completion.
@@ -48,6 +48,9 @@ ZSH_THEME="" # using pure power prompt https://github.com/sindresorhus/pure#inst
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# https://github.com/zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -68,6 +71,7 @@ plugins=(
   tig
   tmux
   tmuxinator
+  zsh-autosuggestions
   zsh_reload # run 'src' to refresh .zshrc
 )
 
@@ -156,8 +160,8 @@ export PATH=$PATH:$HOME/.asdf/installs/rust/stable/bin
 # FZF
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-FZF_CTRL_T_COMMAND="ag -g ''"
-FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
+# FZF_CTRL_T_COMMAND="ag -g ''"
+# FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
 
 # Tmuxinator autocompletion
 # and mux alias
@@ -178,8 +182,9 @@ export PATH=".git/safe/../../bin:$PATH"
 # Completion for kitty
 # kitty + complete setup zsh | source /dev/stdin
 
+
 # Pure power prompt https://github.com/sindresorhus/pure#install
-fpath+=('/home/dees/.asdf/installs/nodejs/11.12.0/.npm/lib/node_modules/pure-prompt/functions')
+fpath+=("$HOME/.asdf/installs/nodejs/12.10.0/.npm/lib/node_modules/pure-prompt/functions")
 autoload -U promptinit; promptinit
 prompt pure
 
